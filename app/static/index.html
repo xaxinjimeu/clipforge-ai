@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipForge AI — Turn long videos into shorts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">✂</div><span>clipforge<span class="brand-ai">.ai</span></span></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <a class="nav active" href="#"><span>◈</span> Create clips</a>
+    <a class="nav muted" href="#"><span>▤</span> My projects <small>SOON</small></a>
+    <a class="nav muted" href="#"><span>⚙</span> Settings</a>
+    <div class="side-bottom"><div class="plan-card"><div class="plan-dot"></div><b>Starter workspace</b><p>Build your first video clips.</p></div><div class="profile"><div class="avatar">C</div><div><b>Creator</b><small>Free workspace</small></div><span class="more">•••</span></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">Workspace <span>/</span> <b>Create clips</b></div><div class="top-right"><span class="status"><i></i> Processing ready</span><div class="avatar small">C</div></div></header>
+    <section class="intro"><div class="eyebrow">AI VIDEO WORKSPACE <span>• MVP</span></div><h1>Find the moments<br><em>worth sharing.</em></h1><p>Transcribe, rank and turn long videos into short clips.</p></section>
+    <section class="workspace-grid">
+      <div class="panel upload-panel">
+        <div class="panel-head"><div><span class="step">01</span><h2>Bring your video</h2><p>Upload a video from your device to get started.</p></div><span class="tag">SPEECH-AWARE MVP</span></div>
+        <label class="dropzone" id="dropzone" for="videoInput">
+          <input id="videoInput" type="file" accept="video/mp4,video/quicktime,video/webm,video/x-matroska">
+          <div class="upload-icon">↑</div><b>Drop your video here</b><span>or <u>browse files</u></span><small>MP4, MOV, WEBM or MKV</small>
+        </label>
+        <div class="file-row hidden" id="fileRow"><div class="file-icon">▶</div><div class="file-info"><b id="fileName">video.mp4</b><small id="fileMeta">Ready to process</small></div><button id="removeFile" class="icon-btn" title="Remove">×</button></div>
+        <div class="settings">
+          <div class="setting-title"><span class="step">02</span><h2>Clip settings</h2></div>
+          <div class="fields">
+            <label>NUMBER OF CLIPS<select id="clipCount"><option>3</option><option>2</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option></select></label>
+            <label>CLIP LENGTH<select id="clipLength"><option value="30">Up to 30 seconds</option><option value="15">Up to 15 seconds</option><option value="45">Up to 45 seconds</option><option value="60">Up to 60 seconds</option><option value="90">Up to 90 seconds</option></select></label>
+          </div>
+          <div class="format-label">OUTPUT FORMAT</div>
+          <div class="formats">
+            <button class="format selected" data-aspect="9:16"><span class="ratio tall"></span><b>Portrait</b><small>9:16 · Shorts / Reels</small></button>
+            <button class="format" data-aspect="1:1"><span class="ratio square"></span><b>Square</b><small>1:1 · Feed</small></button>
+            <button class="format" data-aspect="16:9"><span class="ratio wide"></span><b>Landscape</b><small>16:9 · YouTube</small></button>
+          </div>
+        </div>
+        <button id="createBtn" class="primary" disabled><span>✦</span> Generate clips <b>→</b></button>
+        <p class="fineprint">Speech AI runs locally on the server when installed. Only upload content you have permission to use.</p>
+      </div>
+      <div class="right-column">
+        <div class="panel preview-panel"><div class="panel-head"><div><span class="step">03</span><h2>Your clip studio</h2><p>Generated clips will appear here.</p></div><span class="live-pill"><i></i> READY</span></div>
+          <div class="empty-state" id="emptyState"><div class="sparkle">✧</div><b>Your clips are waiting to happen</b><p>Upload a video and generate clips to see them here.</p><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div id="loadingState" class="loading hidden"><div class="loader"></div><b>Creating your clips…</b><p>Keep this tab open while the video is processed.</p></div>
+          <div id="results" class="results hidden"></div>
+        </div>
+        <div class="notice"><div class="notice-icon">✦</div><div><b>AI highlight detection is the next upgrade</b><p>Speech-aware highlight ranking is enabled when the optional Whisper AI package is installed. Animated captions and face tracking are future upgrades.</p></div></div>
+      </div>
+    </section>
+    <footer>CLIPFORGE AI <span>•</span> CREATOR TOOLS <span class="footer-right">BUILT FOR THE NEXT BIG CLIP</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="/static/app.js"></script>
+</body></html>
